@@ -60,25 +60,52 @@ public class main {
             String sqlDate4 = new java.sql.Date(date4.getTime()).toString()
                     .replace("-", "/");
 
-
             java.sql.Statement statement = connection.createStatement();
+
             ResultSet rs = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM public.orders WHERE orderdate between '" + sqlDate1 +
                     "' and  '" + sqlDate2 + "'");
+
+            /*ResultSet rs = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM public.orders, public.items, public.products" +
+                    "WHERE public.orders.orderid = public.items.orderid AND" +
+                    "public.items.itemid = public.products.itemid AND" +
+                    "public.products.creationdate between '" + sqlDate1 + "'" +
+                    "AND '" + sqlDate2 + "'");*/
+
             rs.next();
             int count1 = rs.getInt("recordCount");
 
             rs = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM public.orders WHERE orderdate between '" + sqlDate2 +
                     "' and  '" + sqlDate3 + "'");
+
+            /*rs = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM public.orders, public.items, public.products" +
+                    "WHERE public.orders.orderid = public.items.orderid AND" +
+                    "public.items.itemid = public.products.itemid AND" +
+                    "public.products.creationdate between '" + sqlDate2 + "'" +
+                    "AND '" + sqlDate3 + "'");*/
+
             rs.next();
             int count2 = rs.getInt("recordCount");
 
             rs = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM public.orders WHERE orderdate between '" + sqlDate3 +
                     "' and  '" + sqlDate4 + "'");
+
+            /*rs = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM public.orders, public.items, public.products" +
+                    "WHERE public.orders.orderid = public.items.orderid AND" +
+                    "public.items.itemid = public.products.itemid AND" +
+                    "public.products.creationdate between '" + sqlDate3 + "'" +
+                    "AND '" + sqlDate4 + "'");*/
+
             rs.next();
             int count3 = rs.getInt("recordCount");
 
 
             rs = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM public.orders WHERE orderdate >= '" + sqlDate4 + "'");
+
+            /*rs = statement.executeQuery("SELECT COUNT(*) AS recordCount FROM public.orders, public.items, public.products" +
+                    "WHERE public.orders.orderid = public.items.orderid AND" +
+                    "public.items.itemid = public.products.itemid AND" +
+                    "public.products.creationdate >= '" + sqlDate4 + "'");*/
+
             rs.next();
             int count4 = rs.getInt("recordCount");
 
