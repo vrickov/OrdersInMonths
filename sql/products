@@ -1,0 +1,26 @@
+CREATE TABLE products(
+	productid serial,
+	itemid INT,
+	"name" VARCHAR(64),  
+  	category VARCHAR(64),
+  	weight VARCHAR(10),
+  	price VARCHAR(10),
+	creationdate date NULL,
+  	PRIMARY KEY(productid),
+	FOREIGN KEY(itemid) REFERENCES items(itemid)
+);
+
+INSERT INTO public.products(
+	"itemid", "name", "category", "weight", "price", "creationdate")
+VALUES 
+ ('1', 'productA', 'gaming','3.00','6.70', '2020-01-01 00:20:20'),
+ ('2', 'productB', 'bathroom','5.00','6.75','2020-05-01 12:00:03'),
+ ('3', 'productC', 'outside', '3.00','6.80', '2021-01-01 15:00:40'),
+ ('4', 'productD', 'outside', '2.50','7.70','2020-12-01 15:00:40'),
+ ('5', 'productE', 'gaming','3.50','6.30','2019-10-01 10:00:40'),
+ ('6', 'productF',' bathroom','4.50','4.30','2021-01-30 12:00:40'),
+ ('7', 'productG', 'kitchen', '7.50','4.87','2021-05-01 20:00:40'),
+ ('8', 'productH', 'kitchen','5.00','8.00','2021-01-04 03:00:40'),
+ ('9', 'productI', 'outside', '3.50', '3.00','2020-06-01 12:00:40'),
+ ('10', 'productJ', 'bathroom', '3.00', '3.00', '2018-03-01 10:00:40'),
+ ('11', 'productK', 'kitchen', '4.00', '3.00','2018-01-01 15:00:40');

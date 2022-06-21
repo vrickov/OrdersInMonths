@@ -1,0 +1,23 @@
+CREATE TABLE orders(
+	orderId serial,  
+  	customerName VARCHAR(64),
+  	contact VARCHAR(128),
+  	address VARCHAR(255),
+	total INT NULL,
+	orderDate date,
+  	PRIMARY KEY(orderId)
+);
+
+INSERT INTO public.orders(
+	"customername", "contact", "address", "total", "orderdate")
+VALUES ('Rui', '123', 'RuaMaria',25,'2020-01-01 00:20:20'),
+ ('Ana', '124', 'RuaAna',24,'2020-05-01 12:00:03'),
+ ('Andre', '125', 'RuaInes', 22, '2021-01-01 15:00:40'),
+ ('Joana', '126', 'RuaMaria', 12,' 2020-12-01 15:00:40'),
+ ('Joao', '122', 'RuaMaria',15, '2019-10-01 10:00:40'),
+ ('Ricardo', '121',' RuaInes',10, '2021-01-30 12:00:40'),
+ ('Soraia', '127', 'RuaMaria', 32,' 2021-05-01 20:00:40'),
+ ('Nuno', '128', 'RuaAna',55, '2021-01-04 03:00:40'),
+ ('Marco', '129', 'RuaMaria', 27,' 2020-06-01 12:00:40'),
+ ('Sara', '130', 'RuaAna', 29, '2018-03-01 10:00:40'),
+ ('Beatriz', '131', 'RuaMaria', 30,' 2018-01-01 15:00:40');

@@ -1,0 +1,25 @@
+CREATE TABLE items(
+	itemid serial,  
+	orderid INT,
+  	"cost" VARCHAR(64),
+  	shippingfee VARCHAR(64),
+  	tax VARCHAR(64),
+	amount INT,
+  	PRIMARY KEY(itemid),
+	FOREIGN KEY(orderid) REFERENCES orders(orderid)
+);
+
+INSERT INTO public.items(
+	"orderid", "cost", "shippingfee", "tax", "amount")
+VALUES 
+ ('1', '10.56', '1.00','1.00', 1),
+ ('2', '11.74', '1.00','1.00', 3),
+ ('3', '5.90', '2.00', '1.00', 1),
+ ('4', '7.00', '2.00', '1.00', 1),
+ ('5', '21.50', '1.50','1.00', 3),
+ ('6', '3.75','3.50','1.00', 1),
+ ('7', '9.00', '5.00', '1.00', 1),
+ ('8', '34.23', '1.50','1.00', 1),
+ ('9', '14.76', '1.50', '1.00', 2),
+ ('10', '19.44', '1.50', '1.00', 1),
+ ('1', '24.32', '1.50', '1.00', 1);
